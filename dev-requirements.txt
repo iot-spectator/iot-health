@@ -1,3 +1,7 @@
+black
+click
+opencv-python
+psutil
 pytest
 sphinx
 
