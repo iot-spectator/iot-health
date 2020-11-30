@@ -51,8 +51,25 @@ Supported Devices
 +-------------------------------------+-------------------------+
 
 
-
 Usages
 ------
+`IoT Health` provides a convenient command line tool. After install `IoT Health`, run `iot-health-cli` to launch the CLI tool.
 
+.. code-block:: bash
 
+    iot-health-cli
+    Usage: iot-health-cli [OPTIONS] COMMAND [ARGS]...
+
+    Options:
+    --help  Show this message and exit.
+
+    Commands:
+    cameras
+    capacity
+    memory
+    os-info
+    platform
+    processor-arch
+    processors
+    summary
+    temperature
