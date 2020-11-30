@@ -8,12 +8,12 @@ IoT Health is a library which provides the health information for supported IoT 
 
 Requirements
 ------------
-`Python 3.7` or newer is required.
+``Python 3.7`` or newer is required.
 
 
 Installation
 ------------
-There are a few ways to install `IoT Health`. 
+There are a few ways to install ``IoT Health``. 
 
 - Install the latest release from PyPI
 
@@ -40,7 +40,7 @@ There are a few ways to install `IoT Health`.
 
 Supported Devices
 -----------------
-`IoT Health` supports and tested on the following devices and platforms.
+``IoT Health`` supports and tested on the following devices and platforms.
 
 +-------------------------------------+-------------------------+
 | Device                              | Operating System        |
@@ -53,11 +53,11 @@ Supported Devices
 
 Usages
 ------
-`IoT Health` provides a convenient command line tool. After install `IoT Health`, run `iot-health-cli` to launch the CLI tool.
+``IoT Health`` provides a convenient command line tool. After install ``IoT Health``, run ``iot-health-cli`` to launch the CLI tool.
 
 .. code-block:: bash
 
-    iot-health-cli
+    $ iot-health-cli
     Usage: iot-health-cli [OPTIONS] COMMAND [ARGS]...
 
     Options:
