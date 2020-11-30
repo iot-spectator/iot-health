@@ -68,5 +68,5 @@ cli.add_command(temperature)
 cli.add_command(cameras)
 
 
-if __name__ == "__main__":
+def main():
     cli()

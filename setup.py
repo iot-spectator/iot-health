@@ -30,7 +30,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=["examples", "tests"]),
     entry_points={
         "console_scripts": [
-            "cli=datainventory.bin.cli:main"
+            "iot-health-cli=iothealth.bin.cli:main"
         ]
     },
     python_requires=">=3.7"
