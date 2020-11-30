@@ -1,8 +1,10 @@
 black
 click
+flake8
 opencv-python
 psutil
 pytest
+pytest-cov
 sphinx
 
 # Install the following packages in development mode
