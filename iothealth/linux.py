@@ -100,11 +100,7 @@ class Linux(_base_health.BaseHealth):
             and `used`.
         """
         result = shutil.disk_usage("/")
-        return {
-            "total": result.total,
-            "available": result.free,
-            "used": result.used
-        }
+        return {"total": result.total, "available": result.free, "used": result.used}
 
     # Override
     @classmethod
