@@ -2,7 +2,10 @@ Health and Status Library for IoT Devices
 =========================================
 
 .. image:: https://github.com/iot-spectator/iot-health/workflows/Test/badge.svg 
+    :target: https://github.com/iot-spectator/iot-health/actions?query=workflow%3ATest
+
 .. image:: https://github.com/iot-spectator/iot-health/workflows/Linting/badge.svg
+    :target: https://github.com/iot-spectator/iot-health/actions?query=workflow%3ALinting
 
 IoT Health is a library which provides the health information for supported IoT devices.
 
