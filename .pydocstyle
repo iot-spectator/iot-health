@@ -1,3 +1,2 @@
 [pydocstyle]
 convention=numpy
-add_ignore=D107
