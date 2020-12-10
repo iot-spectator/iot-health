@@ -1,8 +1,10 @@
 black
 click
 flake8
+mypy
 opencv-python
 psutil
+pydocstyle
 pytest
 pytest-cov
 sphinx

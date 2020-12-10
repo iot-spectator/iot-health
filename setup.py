@@ -24,14 +24,10 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.8"
+        "Programming Language :: Python :: 3.7",
     ],
     keywords="IoT",
     packages=setuptools.find_packages(exclude=["examples", "tests"]),
-    entry_points={
-        "console_scripts": [
-            "iot-health-cli=iothealth.bin.cli:main"
-        ]
-    },
-    python_requires=">=3.7"
+    entry_points={"console_scripts": ["iot-health-cli=iothealth.bin.cli:main"]},
+    python_requires=">=3.7",
 )

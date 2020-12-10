@@ -90,7 +90,7 @@ class RaspberryPi(_base_health.BaseHealth):
         return {
             "total": result.total,
             "available": result.available,
-            "used": result.used
+            "used": result.used,
         }
 
     # Override
@@ -105,11 +105,7 @@ class RaspberryPi(_base_health.BaseHealth):
             and `used`.
         """
         result = shutil.disk_usage("/")
-        return {
-            "total": result.total,
-            "available": result.free,
-            "used": result.used
-        }
+        return {"total": result.total, "available": result.free, "used": result.used}
 
     # Override
     @classmethod
@@ -133,7 +129,7 @@ class RaspberryPi(_base_health.BaseHealth):
             text=True,
         )
         if not result.stderr:
-            temp = re.search("\d+\.\d+", result.stdout)
+            temp = re.search("\\d+\\.\\d+", result.stdout)
             if temp:
                 return float(temp.group(0))
 
