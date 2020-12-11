@@ -21,6 +21,7 @@ class RaspberryPi(_base_health.BaseHealth):
     # Override
     @classmethod
     def summary(cls) -> dict:
+        """Provide the device health summary."""
         raise NotImplementedError()
 
     # Override
@@ -73,6 +74,7 @@ class RaspberryPi(_base_health.BaseHealth):
     # Override
     @classmethod
     def processors(cls) -> List[dict]:
+        """Provice the device processors info."""
         raise NotImplementedError()
 
     # Override
@@ -138,4 +140,5 @@ class RaspberryPi(_base_health.BaseHealth):
     # Override
     @classmethod
     def cameras(cls) -> List[dict]:
+        """Provide the cameras info."""
         raise NotImplementedError()

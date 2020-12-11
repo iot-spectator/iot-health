@@ -19,6 +19,7 @@ class Linux(_base_health.BaseHealth):
     # Override
     @classmethod
     def summary(cls) -> dict:
+        """Provide the summary of the device health info."""
         raise NotImplementedError()
 
     # Override
@@ -68,6 +69,7 @@ class Linux(_base_health.BaseHealth):
     # Override
     @classmethod
     def processors(cls) -> List[dict]:
+        """Provide the processors information."""
         raise NotImplementedError()
 
     # Override
@@ -105,9 +107,11 @@ class Linux(_base_health.BaseHealth):
     # Override
     @classmethod
     def temperature(cls) -> float:
+        """Provide the device temperature."""
         raise NotImplementedError()
 
     # Override
     @classmethod
     def cameras(cls) -> List[dict]:
+        """Provide cameras information."""
         raise NotImplementedError()

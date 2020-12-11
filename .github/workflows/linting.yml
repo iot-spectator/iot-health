@@ -25,3 +25,5 @@ jobs:
       run: flake8 **/*.py
     - name: Type checking with mypy
       run: mypy **/*.py
+    - name: Docstring check with pydocstyle
+      run: pydocstyle

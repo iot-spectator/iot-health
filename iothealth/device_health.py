@@ -10,6 +10,7 @@ from iothealth import raspberry_pi
 
 
 class DeviceHealth(_base_health.BaseHealth):
+    """Generic class for a device health info."""
 
     _current_device_cache: Optional[_base_health.BaseHealth] = None
 
@@ -28,41 +29,49 @@ class DeviceHealth(_base_health.BaseHealth):
     # Override
     @classmethod
     def device_platform(cls) -> str:
+        """Provide the device platform info."""
         return DeviceHealth._current_device().device_platform()
 
     # Override
     @classmethod
     def processor_architecture(cls) -> str:
+        """Provide the device CPU info."""
         return DeviceHealth._current_device().processor_architecture()
 
     # Override
     @classmethod
     def operating_system(cls) -> str:
+        """Provide the device OS info."""
         return DeviceHealth._current_device().operating_system()
 
     # Override
     @classmethod
     def processors(cls) -> List[dict]:
+        """Provice the device processors info."""
         return DeviceHealth._current_device().processors()
 
     # Override
     @classmethod
     def memory(cls) -> dict:
+        """Provide the device memory info."""
         return DeviceHealth._current_device().memory()
 
     # Override
     @classmethod
     def capacity(cls) -> dict:
+        """Provide the device disk usage info."""
         return DeviceHealth._current_device().capacity()
 
     # Override
     @classmethod
     def temperature(cls) -> float:
+        """Provide the device temperature."""
         return DeviceHealth._current_device().temperature()
 
     # Override
     @classmethod
     def cameras(cls) -> List[dict]:
+        """Provide the cameras info."""
         return DeviceHealth._current_device().cameras()
 
     @classmethod
