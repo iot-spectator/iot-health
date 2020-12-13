@@ -21,7 +21,7 @@ class BaseHealth(abc.ABC):
             "memory": cls.memory(),
             "capacity": cls.capacity(),
             "temperature": cls.temperature(),
-            "cameras": cls.cameras()
+            "cameras": cls.cameras(),
         }
 
     @classmethod
