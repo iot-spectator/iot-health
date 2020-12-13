@@ -104,10 +104,7 @@ class RaspberryPi(_base_health.BaseHealth):
         frequency = psutil.cpu_freq()
         usages = list()
         for index, usage in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
-            each_cpu = {
-                "core": index,
-                "usage": usage
-            }
+            each_cpu = {"core": index, "usage": usage}
             usages.append(each_cpu)
 
         result = {
@@ -117,7 +114,7 @@ class RaspberryPi(_base_health.BaseHealth):
             "min_frequency": frequency.min,
             "current_frequency": frequency.current,
             "usage_per_core": usages,
-            "total_usage": psutil.cpu_percent()
+            "total_usage": psutil.cpu_percent(),
         }
         return result
 
