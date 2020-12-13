@@ -28,6 +28,7 @@ setuptools.setup(
     ],
     keywords="IoT",
     packages=setuptools.find_packages(exclude=["examples", "tests"]),
+    install_requires=["click", "opencv-python", "psutil"],
     entry_points={"console_scripts": ["iot-health-cli=iothealth.bin.cli:main"]},
     python_requires=">=3.7",
 )

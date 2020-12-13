@@ -1,13 +1,10 @@
 black
-click
 flake8
 mypy
-opencv-python
-psutil
 pydocstyle
 pytest
 pytest-cov
 sphinx
 
-# Install the following packages in development mode
--e .
+# Install all the dependencies of the release version
+-r requirements.txt
