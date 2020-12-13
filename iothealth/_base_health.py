@@ -4,17 +4,25 @@
 
 import abc
 
-from typing import List
+from typing import Dict, Optional
 
 
 class BaseHealth(abc.ABC):
     """Definition for common health information."""
 
     @classmethod
-    @abc.abstractmethod
-    def summary(cls) -> dict:
+    def summary(cls) -> Dict:
         """Provide the device health summary."""
-        raise NotImplementedError()
+        return {
+            "platform": cls.device_platform(),
+            "cpu_arch": cls.processor_architecture(),
+            "os": cls.operating_system(),
+            "processors": cls.processors(),
+            "memory": cls.memory(),
+            "capacity": cls.capacity(),
+            "temperature": cls.temperature(),
+            "cameras": cls.cameras()
+        }
 
     @classmethod
     @abc.abstractmethod
@@ -36,7 +44,7 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def processors(cls) -> List[dict]:
+    def processors(cls) -> Dict:
         """Provice the device processors info."""
         raise NotImplementedError()
 
@@ -54,12 +62,12 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def temperature(cls) -> float:
+    def temperature(cls) -> Optional[float]:
         """Provide the device temperature."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def cameras(cls) -> List[dict]:
+    def cameras(cls) -> Dict:
         """Provide the cameras info."""
         raise NotImplementedError()

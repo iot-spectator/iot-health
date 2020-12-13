@@ -9,20 +9,13 @@ import subprocess
 
 import psutil
 
-from typing import List
+from typing import Dict, Optional
 
 from iothealth import _base_health
-from iothealth import health_exceptions
 
 
 class RaspberryPi(_base_health.BaseHealth):
     """Check Raspberry Pi health and status."""
-
-    # Override
-    @classmethod
-    def summary(cls) -> dict:
-        """Provide the device health summary."""
-        raise NotImplementedError()
 
     # Override
     @classmethod
@@ -73,9 +66,60 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def processors(cls) -> List[dict]:
-        """Provice the device processors info."""
-        raise NotImplementedError()
+    def processors(cls) -> Dict:
+        """Get the detail processor information as JSON format.
+
+        Returns
+        -------
+        `dict`
+            The detail information is as the following format:
+        .. code-block:: JSON
+            {
+                "physical_cores": 4,
+                "total_cores": 4,
+                "max_frequency": 1400.00,
+                "min_frequency": 600.00,
+                "current_frequency": 1400.00,
+                "usage_per_core": [
+                    {
+                        "core": 0,
+                        "usage": 0.2
+                    },
+                    {
+                        "core": 1,
+                        "usage": 0.0
+                    },
+                    {
+                        "core": 2,
+                        "usage": 0.0
+                    },
+                    {
+                        "core": 3,
+                        "usage": 0.0
+                    }
+                ],
+                "total_usage": 0.1
+            }
+        """
+        frequency = psutil.cpu_freq()
+        usages = list()
+        for index, usage in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
+            each_cpu = {
+                "core": index,
+                "usage": usage
+            }
+            usages.append(each_cpu)
+
+        result = {
+            "physical_cores": psutil.cpu_count(logical=False),
+            "total_cores": psutil.cpu_count(logical=True),
+            "max_frequency": frequency.max,
+            "min_frequency": frequency.min,
+            "current_frequency": frequency.current,
+            "usage_per_core": usages,
+            "total_usage": psutil.cpu_percent()
+        }
+        return result
 
     # Override
     @classmethod
@@ -111,7 +155,7 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> float:
+    def temperature(cls) -> Optional[float]:
         """Get the device's temperature.
 
         Returns
@@ -135,10 +179,10 @@ class RaspberryPi(_base_health.BaseHealth):
             if temp:
                 return float(temp.group(0))
 
-        raise health_exceptions.TemperatureError()
+        return None
 
     # Override
     @classmethod
-    def cameras(cls) -> List[dict]:
+    def cameras(cls) -> Dict:
         """Provide the cameras info."""
-        raise NotImplementedError()
+        return {}

@@ -4,4 +4,4 @@ from iothealth import linux
 
 
 def test_basic():
-    assert linux.Linux().processor_architecture() != ""
+    assert linux.Linux().summary() is not None
