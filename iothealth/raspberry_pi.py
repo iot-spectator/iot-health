@@ -174,7 +174,7 @@ class RaspberryPi(_base_health.BaseHealth):
         if not result.stderr:
             temp = re.search("\\d+\\.\\d+", result.stdout)
             if temp:
-                return {"chip", float(temp.group(0))}
+                return {"chip": temp.group(0)}
 
         return {}
 

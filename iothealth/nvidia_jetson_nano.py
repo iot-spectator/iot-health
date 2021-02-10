@@ -168,7 +168,7 @@ class JetsonNano(_base_health.BaseHealth):
             )
             if ztemp.stderr:
                 continue
-            zone_temps[zname] = float(ztemp)
+            zone_temps[zname.stdout.strip()] = ztemp.stdout.strip()
         return zone_temps
 
     # Override

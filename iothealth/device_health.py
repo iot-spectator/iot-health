@@ -65,7 +65,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> dict:
         """Provide the device temperature."""
         return DeviceHealth._current_device().temperature()
 
