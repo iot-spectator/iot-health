@@ -8,7 +8,7 @@ import subprocess
 
 import psutil
 
-from typing import Dict, Optional
+from typing import Dict
 
 from iothealth import _base_health
 
@@ -148,10 +148,28 @@ class JetsonNano(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Optional[float]:
-        """Get the device's temperature."""
-
-        return None
+    def temperature(cls) -> Dict[str, float]:
+        """Get the device's temperature.."""
+        thermal_zone_path = "/sys/devices/virtual/thermal/thermal_zone"
+        zone_temps = {}
+        for zone_number in range(0, 6):
+            zone_dir = thermal_zone_path + str(zone_number)
+            zname = subprocess.run(
+                ["cat", zone_dir + "/type"],
+                capture_output=True,
+                text=True,
+            )
+            if zname.stderr:
+                continue
+            ztemp = subprocess.run(
+                ["cat", zone_dir + "/temp"],
+                capture_output=True,
+                text=True,
+            )
+            if ztemp.stderr:
+                continue
+            zone_temps[zname] = float(ztemp)
+        return zone_temps
 
     # Override
     @classmethod
