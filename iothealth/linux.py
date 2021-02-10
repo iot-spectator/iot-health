@@ -156,19 +156,19 @@ class Linux(_base_health.BaseHealth):
             zone_dir = thermal_zone_path + str(zone_number)
             zname = subprocess.run(
                 ["cat", zone_dir + "/type"],
-                capture_output=True,
-                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
             )
             if zname.stderr:
                 continue
             ztemp = subprocess.run(
                 ["cat", zone_dir + "/temp"],
-                capture_output=True,
-                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
             )
             if ztemp.stderr:
                 continue
-            zone_temps[zname.stdout.strip()] = ztemp.stdout.strip()
+            zone_temps[zname.stdout.strip()] = ztemp.stdout.decode("utf-8").strip()
         return zone_temps
 
     # Override
