@@ -7,7 +7,6 @@ from typing import Dict, Optional
 from iothealth import _base_health
 from iothealth import linux
 from iothealth import raspberry_pi
-from iothealth import nvidia_jetson_nano
 
 
 class DeviceHealth(_base_health.BaseHealth):
@@ -78,13 +77,10 @@ class DeviceHealth(_base_health.BaseHealth):
     @classmethod
     def _current_device(cls) -> _base_health.BaseHealth:
         if cls._current_device_cache is None:
-            if "Raspberry Pi" in raspberry_pi.RaspberryPi().device_platform():
+            if raspberry_pi.RaspberryPi().device_platform():
                 cls._current_device_cache = raspberry_pi.RaspberryPi()
-            elif (
-                "NVIDIA Jetson Nano"
-                in nvidia_jetson_nano.JetsonNano().device_platform()
-            ):
-                cls._current_device_cache = nvidia_jetson_nano.JetsonNano()
             else:
-                cls._current_device_cache = linux.Linux()
+                cls._current_device_cache = (
+                    linux.Linux()
+                )  # Jetson Nano is also included
         return cls._current_device_cache

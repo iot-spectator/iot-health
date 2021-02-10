@@ -28,11 +28,11 @@ class Linux(_base_health.BaseHealth):
             Otherwise, return the device platform info.
         """
         result = subprocess.run(
-            ["cat", "/proc/version"], capture_output=True, text=True
+            ["cat", "/proc/version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         if result.stderr:
             return str()
-        return result.stdout.strip()
+        return result.stdout.decode("utf-8").strip()
 
     # Override
     @classmethod
@@ -168,7 +168,9 @@ class Linux(_base_health.BaseHealth):
             )
             if ztemp.stderr:
                 continue
-            zone_temps[zname.stdout.strip()] = ztemp.stdout.decode("utf-8").strip()
+            zone_temps[zname.stdout.decode("utf-8").strip()] = ztemp.stdout.decode(
+                "utf-8"
+            ).strip()
         return zone_temps
 
     # Override

@@ -31,12 +31,12 @@ class RaspberryPi(_base_health.BaseHealth):
         """
         result = subprocess.run(
             ["cat", "/sys/firmware/devicetree/base/model"],
-            capture_output=True,
-            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
         if result.stderr:
             return str()
-        return result.stdout.strip()
+        return result.stdout.decode("utf-8").strip()
 
     # Override
     @classmethod
