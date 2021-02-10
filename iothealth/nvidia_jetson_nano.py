@@ -148,7 +148,7 @@ class JetsonNano(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Dict[str, float]:
+    def temperature(cls) -> dict:
         """Get the device's temperature.."""
         thermal_zone_path = "/sys/devices/virtual/thermal/thermal_zone"
         zone_temps = {}

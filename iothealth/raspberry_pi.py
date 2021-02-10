@@ -9,7 +9,7 @@ import subprocess
 
 import psutil
 
-from typing import Dict, Optional
+from typing import Dict
 
 from iothealth import _base_health
 
@@ -152,7 +152,7 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> dict:
         """Get the device's temperature.
 
         Returns
@@ -174,9 +174,9 @@ class RaspberryPi(_base_health.BaseHealth):
         if not result.stderr:
             temp = re.search("\\d+\\.\\d+", result.stdout)
             if temp:
-                return float(temp.group(0))
+                return {"chip", float(temp.group(0))}
 
-        return None
+        return {}
 
     # Override
     @classmethod

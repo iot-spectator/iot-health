@@ -4,7 +4,7 @@
 
 import abc
 
-from typing import Dict, Optional
+from typing import Dict
 
 
 class BaseHealth(abc.ABC):
@@ -62,7 +62,7 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> dict:
         """Provide the device temperature."""
         raise NotImplementedError()
 
