@@ -116,7 +116,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def memory(cls) -> dict:
+    def memory(cls) -> Dict:
         """Get virtual memory usage in bytes.
 
         Returns
@@ -134,7 +134,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def capacity(cls) -> dict:
+    def capacity(cls) -> Dict:
         """Get the current disk capacity usage in bytes.
 
         Returns
@@ -148,7 +148,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> dict:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
         thermal_zone_path = "/sys/devices/virtual/thermal/thermal_zone"
         zone_temps = {}

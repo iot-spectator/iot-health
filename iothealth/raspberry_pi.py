@@ -120,7 +120,7 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def memory(cls) -> dict:
+    def memory(cls) -> Dict:
         """Get virtual memory usage in bytes.
 
         Returns
@@ -138,7 +138,7 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def capacity(cls) -> dict:
+    def capacity(cls) -> Dict:
         """Get the current disk capacity usage in bytes.
 
         Returns
@@ -152,7 +152,7 @@ class RaspberryPi(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> dict:
+    def temperature(cls) -> Dict:
         """Get the device's temperature.
 
         Returns

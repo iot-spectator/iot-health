@@ -16,7 +16,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def summary(cls) -> dict:
+    def summary(cls) -> Dict:
         """Provide the health information for the current device.
 
         Returns
@@ -64,7 +64,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> dict:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
         return DeviceHealth._current_device().temperature()
 
