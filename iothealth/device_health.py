@@ -28,7 +28,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def device_platform(cls) -> str:
+    def device_platform(cls) -> Optional[str]:
         """Provide the device platform info."""
         return DeviceHealth._current_device().device_platform()
 
@@ -77,7 +77,7 @@ class DeviceHealth(_base_health.BaseHealth):
     @classmethod
     def _current_device(cls) -> _base_health.BaseHealth:
         if cls._current_device_cache is None:
-            if "Raspberry Pi" in raspberry_pi.RaspberryPi().device_platform():
+            if raspberry_pi.RaspberryPi().device_platform():
                 cls._current_device_cache = raspberry_pi.RaspberryPi()
             else:
                 cls._current_device_cache = (
