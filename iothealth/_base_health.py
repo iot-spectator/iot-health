@@ -50,19 +50,19 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def memory(cls) -> dict:
+    def memory(cls) -> Dict:
         """Provide the device memory info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def capacity(cls) -> dict:
+    def capacity(cls) -> Dict:
         """Provide the device disk usage info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def temperature(cls) -> dict:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
         raise NotImplementedError()
 
