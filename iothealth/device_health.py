@@ -77,7 +77,7 @@ class DeviceHealth(_base_health.BaseHealth):
     @classmethod
     def _current_device(cls) -> _base_health.BaseHealth:
         if cls._current_device_cache is None:
-            if raspberry_pi.RaspberryPi().device_platform():
+            if "Raspberry Pi" in raspberry_pi.RaspberryPi().device_platform():
                 cls._current_device_cache = raspberry_pi.RaspberryPi()
             else:
                 cls._current_device_cache = (
