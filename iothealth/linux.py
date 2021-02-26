@@ -8,7 +8,7 @@ import subprocess
 
 import psutil
 
-from typing import Dict, Optional
+from typing import Dict
 
 from iothealth import _base_health
 
@@ -28,11 +28,11 @@ class Linux(_base_health.BaseHealth):
             Otherwise, return the device platform info.
         """
         result = subprocess.run(
-            ["cat", "/proc/version"], capture_output=True, text=True
+            ["cat", "/proc/version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         if result.stderr:
             return str()
-        return result.stdout.strip()
+        return result.stdout.decode("utf-8").strip()
 
     # Override
     @classmethod
@@ -116,7 +116,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def memory(cls) -> dict:
+    def memory(cls) -> Dict:
         """Get virtual memory usage in bytes.
 
         Returns
@@ -134,7 +134,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def capacity(cls) -> dict:
+    def capacity(cls) -> Dict:
         """Get the current disk capacity usage in bytes.
 
         Returns
@@ -148,9 +148,30 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
-        return None
+        thermal_zone_path = "/sys/devices/virtual/thermal/thermal_zone"
+        zone_temps = {}
+        for zone_number in range(0, 6):
+            zone_dir = thermal_zone_path + str(zone_number)
+            zname = subprocess.run(
+                ["cat", zone_dir + "/type"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            if zname.stderr:
+                continue
+            ztemp = subprocess.run(
+                ["cat", zone_dir + "/temp"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            if ztemp.stderr:
+                continue
+            zone_temps[zname.stdout.decode("utf-8").strip()] = ztemp.stdout.decode(
+                "utf-8"
+            ).strip()
+        return zone_temps
 
     # Override
     @classmethod

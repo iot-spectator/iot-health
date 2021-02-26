@@ -4,7 +4,7 @@
 
 import abc
 
-from typing import Dict, Optional
+from typing import Dict
 
 
 class BaseHealth(abc.ABC):
@@ -50,19 +50,19 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def memory(cls) -> dict:
+    def memory(cls) -> Dict:
         """Provide the device memory info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def capacity(cls) -> dict:
+    def capacity(cls) -> Dict:
         """Provide the device disk usage info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
         raise NotImplementedError()
 

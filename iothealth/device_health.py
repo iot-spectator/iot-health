@@ -16,7 +16,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def summary(cls) -> dict:
+    def summary(cls) -> Dict:
         """Provide the health information for the current device.
 
         Returns
@@ -64,7 +64,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Optional[float]:
+    def temperature(cls) -> Dict:
         """Provide the device temperature."""
         return DeviceHealth._current_device().temperature()
 
@@ -77,8 +77,10 @@ class DeviceHealth(_base_health.BaseHealth):
     @classmethod
     def _current_device(cls) -> _base_health.BaseHealth:
         if cls._current_device_cache is None:
-            if raspberry_pi.RaspberryPi().device_platform():
+            if "Raspberry Pi" in raspberry_pi.RaspberryPi().device_platform():
                 cls._current_device_cache = raspberry_pi.RaspberryPi()
             else:
-                cls._current_device_cache = linux.Linux()
+                cls._current_device_cache = (
+                    linux.Linux()
+                )  # Jetson Nano is also included
         return cls._current_device_cache
