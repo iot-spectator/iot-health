@@ -8,7 +8,7 @@ import subprocess
 
 import psutil
 
-from typing import Dict, Optional
+from typing import Dict
 
 from iothealth import _base_health
 
