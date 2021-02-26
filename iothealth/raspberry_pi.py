@@ -5,7 +5,7 @@
 import re
 import subprocess
 
-from typing import Dict, Optional
+from typing import Dict
 
 from iothealth import linux
 
@@ -15,7 +15,7 @@ class RaspberryPi(linux.Linux):
 
     # Override
     @classmethod
-    def device_platform(cls) -> Optional[str]:
+    def device_platform(cls) -> str:
         """Get the IoT device platform.
 
         Returns
@@ -31,7 +31,7 @@ class RaspberryPi(linux.Linux):
             stderr=subprocess.PIPE,
         )
         if result.stderr:
-            return None
+            return str()
         return result.stdout.decode("utf-8").strip()
 
     # Override

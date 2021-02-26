@@ -18,7 +18,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def device_platform(cls) -> Optional[str]:
+    def device_platform(cls) -> str:
         """Get the system information.
 
         Returns
@@ -31,7 +31,7 @@ class Linux(_base_health.BaseHealth):
             ["cat", "/proc/version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         if result.stderr:
-            return None
+            return str()
         return result.stdout.decode("utf-8").strip()
 
     # Override

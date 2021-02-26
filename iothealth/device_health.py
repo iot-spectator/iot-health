@@ -28,7 +28,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def device_platform(cls) -> Optional[str]:
+    def device_platform(cls) -> str:
         """Provide the device platform info."""
         return DeviceHealth._current_device().device_platform()
 

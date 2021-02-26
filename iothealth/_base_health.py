@@ -4,7 +4,7 @@
 
 import abc
 
-from typing import Dict, Optional
+from typing import Dict
 
 
 class BaseHealth(abc.ABC):
@@ -26,7 +26,7 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def device_platform(cls) -> Optional[str]:
+    def device_platform(cls) -> str:
         """Provide the device platform info."""
         raise NotImplementedError()
 
