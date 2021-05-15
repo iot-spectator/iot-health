@@ -12,7 +12,7 @@ README = (HERE / "README.rst").read_text()
 # This call to setup() does all the work
 setuptools.setup(
     name="iothealth",
-    version="0.0.3",
+    version="0.0.4",
     description="IoT Health",
     long_description=README,
     long_description_content_type="text/x-rst",
