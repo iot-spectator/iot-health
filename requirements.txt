@@ -1,3 +1,2 @@
 click
-opencv-python
 psutil
