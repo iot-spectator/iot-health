@@ -31,21 +31,13 @@ There are a few ways to install ``IoT Health``.
 
     pip install iothealth
 
-- Install from Github
+- Install from source
 
 .. code-block:: bash
 
     git clone https://github.com/iot-spectator/iot-health.git
     cd iot-health
-    pip install -r requirements.txt
-
-- Install from Github for development
-
-.. code-block:: bash
-
-    git clone https://github.com/iot-spectator/iot-health.git
-    cd iot-health
-    pip install -r dev-requirements.txt
+    pip install .
 
 
 Supported Devices

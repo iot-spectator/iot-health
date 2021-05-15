@@ -12,7 +12,7 @@ README = (HERE / "README.rst").read_text()
 # This call to setup() does all the work
 setuptools.setup(
     name="iothealth",
-    version="0.0.3",
+    version="0.0.4",
     description="IoT Health",
     long_description=README,
     long_description_content_type="text/x-rst",
@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     keywords="IoT",
     packages=setuptools.find_packages(exclude=["examples", "tests"]),
-    install_requires=["click", "opencv-python", "psutil"],
+    install_requires=["click", "psutil"],
     entry_points={"console_scripts": ["iot-health-cli=iothealth.bin.cli:main"]},
     python_requires=">=3.7",
 )
