@@ -2,7 +2,7 @@
 
 """IoT Health."""
 
-from typing import Dict, Optional
+from typing import Optional
 
 from iothealth import _base_health
 from iothealth import linux
@@ -16,7 +16,7 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def summary(cls) -> Dict:
+    def summary(cls) -> dict:
         """Provide the health information for the current device.
 
         Returns
@@ -46,31 +46,31 @@ class DeviceHealth(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def processors(cls) -> Dict:
+    def processors(cls) -> dict:
         """Provice the device processors info."""
         return DeviceHealth._current_device().processors()
 
     # Override
     @classmethod
-    def memory(cls) -> Dict:
+    def memory(cls) -> dict:
         """Provide the device memory info."""
         return DeviceHealth._current_device().memory()
 
     # Override
     @classmethod
-    def capacity(cls) -> Dict:
+    def capacity(cls) -> dict:
         """Provide the device disk usage info."""
         return DeviceHealth._current_device().capacity()
 
     # Override
     @classmethod
-    def temperature(cls) -> Dict:
+    def temperature(cls) -> dict:
         """Provide the device temperature."""
         return DeviceHealth._current_device().temperature()
 
     # Override
     @classmethod
-    def cameras(cls) -> Dict:
+    def cameras(cls) -> dict:
         """Provide the cameras info."""
         return DeviceHealth._current_device().cameras()
 

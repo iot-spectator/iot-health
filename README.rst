@@ -18,7 +18,7 @@ IoT Health is a library which provides the health information for supported IoT 
 
 Requirements
 ------------
-``Python 3.7`` or newer is required.
+``Python 3.9`` or newer is required.
 
 
 Installation

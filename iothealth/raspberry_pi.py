@@ -5,8 +5,6 @@
 import re
 import subprocess
 
-from typing import Dict
-
 from iothealth import linux
 
 
@@ -36,7 +34,7 @@ class RaspberryPi(linux.Linux):
 
     # Override
     @classmethod
-    def temperature(cls) -> Dict:
+    def temperature(cls) -> dict:
         """Get the device's temperature.
 
         Returns
@@ -64,6 +62,6 @@ class RaspberryPi(linux.Linux):
 
     # Override
     @classmethod
-    def cameras(cls) -> Dict:
+    def cameras(cls) -> dict:
         """Provide the cameras info."""
         return {}

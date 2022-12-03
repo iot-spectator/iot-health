@@ -4,14 +4,12 @@
 
 import abc
 
-from typing import Dict
-
 
 class BaseHealth(abc.ABC):
     """Definition for common health information."""
 
     @classmethod
-    def summary(cls) -> Dict:
+    def summary(cls) -> dict:
         """Provide the device health summary."""
         return {
             "platform": cls.device_platform(),
@@ -44,30 +42,30 @@ class BaseHealth(abc.ABC):
 
     @classmethod
     @abc.abstractmethod
-    def processors(cls) -> Dict:
+    def processors(cls) -> dict:
         """Provice the device processors info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def memory(cls) -> Dict:
+    def memory(cls) -> dict:
         """Provide the device memory info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def capacity(cls) -> Dict:
+    def capacity(cls) -> dict:
         """Provide the device disk usage info."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def temperature(cls) -> Dict:
+    def temperature(cls) -> dict:
         """Provide the device temperature."""
         raise NotImplementedError()
 
     @classmethod
     @abc.abstractmethod
-    def cameras(cls) -> Dict:
+    def cameras(cls) -> dict:
         """Provide the cameras info."""
         raise NotImplementedError()
