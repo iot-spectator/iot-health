@@ -8,8 +8,6 @@ import subprocess
 
 import psutil
 
-from typing import Dict
-
 from iothealth import _base_health
 
 
@@ -62,7 +60,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def processors(cls) -> Dict:
+    def processors(cls) -> dict:
         """Get the detail processor information as JSON format.
 
         Returns
@@ -116,7 +114,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def memory(cls) -> Dict:
+    def memory(cls) -> dict:
         """Get virtual memory usage in bytes.
 
         Returns
@@ -134,7 +132,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def capacity(cls) -> Dict:
+    def capacity(cls) -> dict:
         """Get the current disk capacity usage in bytes.
 
         Returns
@@ -148,7 +146,7 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def temperature(cls) -> Dict:
+    def temperature(cls) -> dict:
         """Provide the device temperature."""
         thermal_zone_path = "/sys/devices/virtual/thermal/thermal_zone"
         zone_temps = {}
@@ -175,6 +173,6 @@ class Linux(_base_health.BaseHealth):
 
     # Override
     @classmethod
-    def cameras(cls) -> Dict:
+    def cameras(cls) -> dict:
         """Provide cameras information."""
         return {}
