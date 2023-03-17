@@ -13,6 +13,9 @@ classifiers = [
     "Programming Language :: Python",
 ]
 keywords = ["IoT"]
+dependencies = [
+    "click", "psutil"
+]
 
 
 [tool.setuptools.packages.find]
