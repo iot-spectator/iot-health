@@ -12,8 +12,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
 ]
-exclude = ["examples", "tests"]
 keywords = ["IoT"]
+
+
+[tool.setuptools.packages.find]
+exclude = ["examples", "tests"]
 
 
 [project.urls]
