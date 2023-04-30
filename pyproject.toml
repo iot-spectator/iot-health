@@ -1,5 +1,5 @@
 [project]
-name = "iot-health"
+name = "iothealth"
 version = "0.0.5"
 authors = [
     { name="IoT Spectator" }
