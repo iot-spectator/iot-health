@@ -3,6 +3,7 @@
 """Raspberry Pi health information."""
 
 import re
+import shutil
 import subprocess
 
 from iothealth import linux
@@ -45,11 +46,17 @@ class RaspberryPi(linux.Linux):
 
         Raises
         ------
-        `TemperatureError`
+        `RuntimeError`
             Raised if the temperature info is not available.
         """
+        VCGENGCMD = "vcgencmd"
+        vcgencmd_path = shutil.which(VCGENGCMD)
+
+        if not vcgencmd_path:
+            raise RuntimeError(f"No {VCGENGCMD} command found.")
+
         result = subprocess.run(
-            ["/opt/vc/bin/vcgencmd", "measure_temp"],
+            [vcgencmd_path, "measure_temp"],
             capture_output=True,
             text=True,
         )
