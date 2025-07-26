@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Reference - IoT Health Monitor</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Reference";
+        var mkdocs_page_input_path = "reference.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> IoT Health Monitor
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth">iothealth</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth.__main__">__main__</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth.bin">bin</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#iothealth.bin.cli">cli</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.cameras">cameras</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.capacity">capacity</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.cli">cli</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.main">main</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.memory">memory</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.os_info">os_info</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.platform">platform</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.processor_arch">processor_arch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.processors">processors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.summary">summary</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.bin.cli.temperature">temperature</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth.device_health">device_health</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#iothealth.device_health.DeviceHealth">DeviceHealth</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.cameras">cameras</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.capacity">capacity</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.device_platform">device_platform</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.memory">memory</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.operating_system">operating_system</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.processor_architecture">processor_architecture</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.processors">processors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.summary">summary</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.device_health.DeviceHealth.temperature">temperature</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth.linux">linux</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#iothealth.linux.Linux">Linux</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.cameras">cameras</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.capacity">capacity</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.device_platform">device_platform</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.memory">memory</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.operating_system">operating_system</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.processor_architecture">processor_architecture</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.processors">processors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.linux.Linux.temperature">temperature</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iothealth.raspberry_pi">raspberry_pi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#iothealth.raspberry_pi.RaspberryPi">RaspberryPi</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.raspberry_pi.RaspberryPi.cameras">cameras</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.raspberry_pi.RaspberryPi.device_platform">device_platform</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iothealth.raspberry_pi.RaspberryPi.temperature">temperature</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">IoT Health Monitor</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-reference">API Reference</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="iothealth"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="iothealth.__main__" class="doc doc-heading">
+            <code>__main__</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>IoT Health CLI Entry.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="iothealth.bin" class="doc doc-heading">
+            <code>bin</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="iothealth.bin.cli" class="doc doc-heading">
+            <code>cli</code>
+
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+        <p>IoT Health CLI.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.cameras" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cameras</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the cameras info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the cameras info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">cameras</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.capacity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">capacity</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the device capacity.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">capacity</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the device capacity.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">capacity</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.cli" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cli</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>CLI entry point.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cli</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;CLI entry point.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.main" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">main</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Entry point for the CLI.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Entry point for the CLI.&quot;&quot;&quot;</span>
+    <span class="n">cli</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.memory" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">memory</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the memory info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">memory</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the memory info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">memory</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.os_info" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">os_info</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for OS info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">os_info</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for OS info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">operating_system</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.platform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">platform</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for platform info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">platform</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for platform info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">device_platform</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.processor_arch" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processor_arch</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the CPU info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processor_arch</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the CPU info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">processor_architecture</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.processors" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processors</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for processors info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processors</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for processors info.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">processors</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">summary</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the health summary.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the health summary.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.bin.cli.temperature" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">temperature</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Command for the device temperature.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/bin/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Command for the device temperature.&quot;&quot;&quot;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">device_health</span><span class="o">.</span><span class="n">DeviceHealth</span><span class="p">()</span><span class="o">.</span><span class="n">temperature</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="iothealth.device_health" class="doc doc-heading">
+            <code>device_health</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>IoT Health.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="iothealth.device_health.DeviceHealth" class="doc doc-heading">
+            <code>DeviceHealth</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="iothealth._base_health.BaseHealth">BaseHealth</span></code></p>
+
+
+        <p>Generic class for a device health info.</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>iothealth/device_health.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DeviceHealth</span><span class="p">(</span><span class="n">_base_health</span><span class="o">.</span><span class="n">BaseHealth</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generic class for a device health info.&quot;&quot;&quot;</span>
+
+    <span class="n">_current_device_cache</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_base_health</span><span class="o">.</span><span class="n">BaseHealth</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the health information for the current device.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `dict`</span>
+<span class="sd">            All the available health information as a key-value dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device platform info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">device_platform</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">processor_architecture</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device CPU info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">processor_architecture</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">operating_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device OS info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">operating_system</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">processors</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provice the device processors info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">processors</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">memory</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device memory info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capacity</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device disk usage info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">capacity</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device temperature.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the cameras info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">cameras</span><span class="p">()</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_current_device</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_base_health</span><span class="o">.</span><span class="n">BaseHealth</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_current_device_cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;Raspberry Pi&quot;</span> <span class="ow">in</span> <span class="n">raspberry_pi</span><span class="o">.</span><span class="n">RaspberryPi</span><span class="p">()</span><span class="o">.</span><span class="n">device_platform</span><span class="p">():</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">_current_device_cache</span> <span class="o">=</span> <span class="n">raspberry_pi</span><span class="o">.</span><span class="n">RaspberryPi</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">_current_device_cache</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">linux</span><span class="o">.</span><span class="n">Linux</span><span class="p">()</span>
+                <span class="p">)</span>  <span class="c1"># Jetson Nano is also included</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_current_device_cache</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.cameras" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cameras</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the cameras info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the cameras info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">cameras</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.capacity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">capacity</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device disk usage info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">capacity</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device disk usage info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">capacity</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.device_platform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">device_platform</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device platform info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device platform info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">device_platform</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.memory" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">memory</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device memory info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">memory</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device memory info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.operating_system" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">operating_system</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device OS info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">operating_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device OS info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">operating_system</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.processor_architecture" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processor_architecture</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device CPU info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processor_architecture</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device CPU info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">processor_architecture</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.processors" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processors</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provice the device processors info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processors</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provice the device processors info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">processors</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.summary" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">summary</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the health information for the current device.</p>
+<h6 id="iothealth.device_health.DeviceHealth.summary--returns">Returns</h6>
+<p><code>dict</code>
+    All the available health information as a key-value dictionary.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the health information for the current device.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `dict`</span>
+<span class="sd">        All the available health information as a key-value dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.device_health.DeviceHealth.temperature" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">temperature</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device temperature.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/device_health.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device temperature.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">DeviceHealth</span><span class="o">.</span><span class="n">_current_device</span><span class="p">()</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="iothealth.linux" class="doc doc-heading">
+            <code>linux</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>General Linux health info on x86 platform.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="iothealth.linux.Linux" class="doc doc-heading">
+            <code>Linux</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="iothealth._base_health.BaseHealth">BaseHealth</span></code></p>
+
+
+        <p>Health information for general Linux devices.</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>iothealth/linux.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Linux</span><span class="p">(</span><span class="n">_base_health</span><span class="o">.</span><span class="n">BaseHealth</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Health information for general Linux devices.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the system information.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `str`</span>
+<span class="sd">            An empty string is returned if the platform is unknown.</span>
+<span class="sd">            Otherwise, return the device platform info.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;/proc/version&quot;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">processor_architecture</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the processor architecture.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `str`</span>
+<span class="sd">            An empty string is returned if the processor architecture is</span>
+<span class="sd">            unknown. Otherwise, return the processor type, e.g., `x86_64`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">operating_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the OS info.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `str`</span>
+<span class="sd">            An empty string is returned if the OS is unknown.</span>
+<span class="sd">            Otherwise, return the processor type, e.g., `Linux`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">processors</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the detail processor information as JSON format.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `dict`</span>
+<span class="sd">            The detail information is as the following format:</span>
+<span class="sd">        .. code-block:: JSON</span>
+<span class="sd">            {</span>
+<span class="sd">                &quot;physical_cores&quot;: 4,</span>
+<span class="sd">                &quot;total_cores&quot;: 4,</span>
+<span class="sd">                &quot;max_frequency&quot;: 1400.00,</span>
+<span class="sd">                &quot;min_frequency&quot;: 600.00,</span>
+<span class="sd">                &quot;current_frequency&quot;: 1400.00,</span>
+<span class="sd">                &quot;usage_per_core&quot;: [</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;core&quot;: 0,</span>
+<span class="sd">                        &quot;usage&quot;: 0.2</span>
+<span class="sd">                    },</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;core&quot;: 1,</span>
+<span class="sd">                        &quot;usage&quot;: 0.0</span>
+<span class="sd">                    },</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;core&quot;: 2,</span>
+<span class="sd">                        &quot;usage&quot;: 0.0</span>
+<span class="sd">                    },</span>
+<span class="sd">                    {</span>
+<span class="sd">                        &quot;core&quot;: 3,</span>
+<span class="sd">                        &quot;usage&quot;: 0.0</span>
+<span class="sd">                    }</span>
+<span class="sd">                ],</span>
+<span class="sd">                &quot;total_usage&quot;: 0.1</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frequency</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_freq</span><span class="p">()</span>
+        <span class="n">usages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">usage</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">percpu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)):</span>
+            <span class="n">each_cpu</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;core&quot;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span> <span class="s2">&quot;usage&quot;</span><span class="p">:</span> <span class="n">usage</span><span class="p">}</span>
+            <span class="n">usages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each_cpu</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;physical_cores&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="s2">&quot;total_cores&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="s2">&quot;max_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">max</span><span class="p">,</span>
+            <span class="s2">&quot;min_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">min</span><span class="p">,</span>
+            <span class="s2">&quot;current_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">current</span><span class="p">,</span>
+            <span class="s2">&quot;usage_per_core&quot;</span><span class="p">:</span> <span class="n">usages</span><span class="p">,</span>
+            <span class="s2">&quot;total_usage&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">memory</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get virtual memory usage in bytes.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `dict`</span>
+<span class="sd">            Usages returned as a `dictionary` with keys `total`, `available`,</span>
+<span class="sd">            and `used`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">total</span><span class="p">,</span>
+            <span class="s2">&quot;available&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">available</span><span class="p">,</span>
+            <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">used</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capacity</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the current disk capacity usage in bytes.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `dict`</span>
+<span class="sd">            Usages returned as a `dictionary` with keys `total`, `available`,</span>
+<span class="sd">            and `used`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">disk_usage</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">total</span><span class="p">,</span> <span class="s2">&quot;available&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">free</span><span class="p">,</span> <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">used</span><span class="p">}</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the device temperature.&quot;&quot;&quot;</span>
+        <span class="n">thermal_zone_path</span> <span class="o">=</span> <span class="s2">&quot;/sys/devices/virtual/thermal/thermal_zone&quot;</span>
+        <span class="n">zone_temps</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">zone_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+            <span class="n">zone_dir</span> <span class="o">=</span> <span class="n">thermal_zone_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">zone_number</span><span class="p">)</span>
+            <span class="n">zname</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">zone_dir</span> <span class="o">+</span> <span class="s2">&quot;/type&quot;</span><span class="p">],</span>
+                <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">zname</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">ztemp</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">zone_dir</span> <span class="o">+</span> <span class="s2">&quot;/temp&quot;</span><span class="p">],</span>
+                <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">ztemp</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">zone_temps</span><span class="p">[</span><span class="n">zname</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span> <span class="o">=</span> <span class="n">ztemp</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+                <span class="s2">&quot;utf-8&quot;</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">zone_temps</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide cameras information.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.cameras" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cameras</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide cameras information.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide cameras information.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.capacity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">capacity</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the current disk capacity usage in bytes.</p>
+<h6 id="iothealth.linux.Linux.capacity--returns">Returns</h6>
+<p><code>dict</code>
+    Usages returned as a <code>dictionary</code> with keys <code>total</code>, <code>available</code>,
+    and <code>used</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">capacity</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the current disk capacity usage in bytes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `dict`</span>
+<span class="sd">        Usages returned as a `dictionary` with keys `total`, `available`,</span>
+<span class="sd">        and `used`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">disk_usage</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">total</span><span class="p">,</span> <span class="s2">&quot;available&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">free</span><span class="p">,</span> <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">used</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.device_platform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">device_platform</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the system information.</p>
+<h6 id="iothealth.linux.Linux.device_platform--returns">Returns</h6>
+<p><code>str</code>
+    An empty string is returned if the platform is unknown.
+    Otherwise, return the device platform info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the system information.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `str`</span>
+<span class="sd">        An empty string is returned if the platform is unknown.</span>
+<span class="sd">        Otherwise, return the device platform info.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;/proc/version&quot;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.memory" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">memory</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get virtual memory usage in bytes.</p>
+<h6 id="iothealth.linux.Linux.memory--returns">Returns</h6>
+<p><code>dict</code>
+    Usages returned as a <code>dictionary</code> with keys <code>total</code>, <code>available</code>,
+    and <code>used</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">memory</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get virtual memory usage in bytes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `dict`</span>
+<span class="sd">        Usages returned as a `dictionary` with keys `total`, `available`,</span>
+<span class="sd">        and `used`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">total</span><span class="p">,</span>
+        <span class="s2">&quot;available&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">available</span><span class="p">,</span>
+        <span class="s2">&quot;used&quot;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">used</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.operating_system" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">operating_system</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the OS info.</p>
+<h6 id="iothealth.linux.Linux.operating_system--returns">Returns</h6>
+<p><code>str</code>
+    An empty string is returned if the OS is unknown.
+    Otherwise, return the processor type, e.g., <code>Linux</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">operating_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the OS info.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `str`</span>
+<span class="sd">        An empty string is returned if the OS is unknown.</span>
+<span class="sd">        Otherwise, return the processor type, e.g., `Linux`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.processor_architecture" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processor_architecture</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the processor architecture.</p>
+<h6 id="iothealth.linux.Linux.processor_architecture--returns">Returns</h6>
+<p><code>str</code>
+    An empty string is returned if the processor architecture is
+    unknown. Otherwise, return the processor type, e.g., <code>x86_64</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processor_architecture</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the processor architecture.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `str`</span>
+<span class="sd">        An empty string is returned if the processor architecture is</span>
+<span class="sd">        unknown. Otherwise, return the processor type, e.g., `x86_64`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.processors" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">processors</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the detail processor information as JSON format.</p>
+<h6 id="iothealth.linux.Linux.processors--returns">Returns</h6>
+<p><code>dict</code>
+    The detail information is as the following format:
+.. code-block:: JSON
+    {
+        "physical_cores": 4,
+        "total_cores": 4,
+        "max_frequency": 1400.00,
+        "min_frequency": 600.00,
+        "current_frequency": 1400.00,
+        "usage_per_core": [
+            {
+                "core": 0,
+                "usage": 0.2
+            },
+            {
+                "core": 1,
+                "usage": 0.0
+            },
+            {
+                "core": 2,
+                "usage": 0.0
+            },
+            {
+                "core": 3,
+                "usage": 0.0
+            }
+        ],
+        "total_usage": 0.1
+    }</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">processors</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the detail processor information as JSON format.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `dict`</span>
+<span class="sd">        The detail information is as the following format:</span>
+<span class="sd">    .. code-block:: JSON</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;physical_cores&quot;: 4,</span>
+<span class="sd">            &quot;total_cores&quot;: 4,</span>
+<span class="sd">            &quot;max_frequency&quot;: 1400.00,</span>
+<span class="sd">            &quot;min_frequency&quot;: 600.00,</span>
+<span class="sd">            &quot;current_frequency&quot;: 1400.00,</span>
+<span class="sd">            &quot;usage_per_core&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;core&quot;: 0,</span>
+<span class="sd">                    &quot;usage&quot;: 0.2</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;core&quot;: 1,</span>
+<span class="sd">                    &quot;usage&quot;: 0.0</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;core&quot;: 2,</span>
+<span class="sd">                    &quot;usage&quot;: 0.0</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;core&quot;: 3,</span>
+<span class="sd">                    &quot;usage&quot;: 0.0</span>
+<span class="sd">                }</span>
+<span class="sd">            ],</span>
+<span class="sd">            &quot;total_usage&quot;: 0.1</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_freq</span><span class="p">()</span>
+    <span class="n">usages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">usage</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(</span><span class="n">percpu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="n">each_cpu</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;core&quot;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span> <span class="s2">&quot;usage&quot;</span><span class="p">:</span> <span class="n">usage</span><span class="p">}</span>
+        <span class="n">usages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each_cpu</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;physical_cores&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="s2">&quot;total_cores&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">(</span><span class="n">logical</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="s2">&quot;max_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">max</span><span class="p">,</span>
+        <span class="s2">&quot;min_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">min</span><span class="p">,</span>
+        <span class="s2">&quot;current_frequency&quot;</span><span class="p">:</span> <span class="n">frequency</span><span class="o">.</span><span class="n">current</span><span class="p">,</span>
+        <span class="s2">&quot;usage_per_core&quot;</span><span class="p">:</span> <span class="n">usages</span><span class="p">,</span>
+        <span class="s2">&quot;total_usage&quot;</span><span class="p">:</span> <span class="n">psutil</span><span class="o">.</span><span class="n">cpu_percent</span><span class="p">(),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.linux.Linux.temperature" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">temperature</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the device temperature.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/linux.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the device temperature.&quot;&quot;&quot;</span>
+    <span class="n">thermal_zone_path</span> <span class="o">=</span> <span class="s2">&quot;/sys/devices/virtual/thermal/thermal_zone&quot;</span>
+    <span class="n">zone_temps</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">zone_number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="n">zone_dir</span> <span class="o">=</span> <span class="n">thermal_zone_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">zone_number</span><span class="p">)</span>
+        <span class="n">zname</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">zone_dir</span> <span class="o">+</span> <span class="s2">&quot;/type&quot;</span><span class="p">],</span>
+            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">zname</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">ztemp</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">zone_dir</span> <span class="o">+</span> <span class="s2">&quot;/temp&quot;</span><span class="p">],</span>
+            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">ztemp</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">zone_temps</span><span class="p">[</span><span class="n">zname</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span> <span class="o">=</span> <span class="n">ztemp</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+            <span class="s2">&quot;utf-8&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">zone_temps</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="iothealth.raspberry_pi" class="doc doc-heading">
+            <code>raspberry_pi</code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+        <p>Raspberry Pi health information.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="iothealth.raspberry_pi.RaspberryPi" class="doc doc-heading">
+            <code>RaspberryPi</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="Linux (iothealth.linux.Linux)" href="#iothealth.linux.Linux">Linux</a></code></p>
+
+
+        <p>Check Raspberry Pi health and status.</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>iothealth/raspberry_pi.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">RaspberryPi</span><span class="p">(</span><span class="n">linux</span><span class="o">.</span><span class="n">Linux</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check Raspberry Pi health and status.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the IoT device platform.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        `str`</span>
+<span class="sd">            An empty string is returned if the platform is unknown.</span>
+<span class="sd">            Otherwise, return the device platform info, e.g.,</span>
+<span class="sd">            `Raspberry Pi 3 Model B Plus Rev 1.3`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;/sys/firmware/devicetree/base/model&quot;</span><span class="p">],</span>
+            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the device&#39;s temperature.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        float</span>
+<span class="sd">            The device temperature, e.g., 54.8.</span>
+<span class="sd">            The temperature unit is Celsius.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        `RuntimeError`</span>
+<span class="sd">            Raised if the temperature info is not available.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">VCGENGCMD</span> <span class="o">=</span> <span class="s2">&quot;vcgencmd&quot;</span>
+        <span class="n">vcgencmd_path</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="n">VCGENGCMD</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">vcgencmd_path</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No </span><span class="si">{</span><span class="n">VCGENGCMD</span><span class="si">}</span><span class="s2"> command found.&quot;</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">vcgencmd_path</span><span class="p">,</span> <span class="s2">&quot;measure_temp&quot;</span><span class="p">],</span>
+            <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;chip&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)}</span>
+
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="c1"># Override</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide the cameras info.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.raspberry_pi.RaspberryPi.cameras" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cameras</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Provide the cameras info.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/raspberry_pi.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cameras</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide the cameras info.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.raspberry_pi.RaspberryPi.device_platform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">device_platform</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the IoT device platform.</p>
+<h6 id="iothealth.raspberry_pi.RaspberryPi.device_platform--returns">Returns</h6>
+<p><code>str</code>
+    An empty string is returned if the platform is unknown.
+    Otherwise, return the device platform info, e.g.,
+    <code>Raspberry Pi 3 Model B Plus Rev 1.3</code>.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/raspberry_pi.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">device_platform</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the IoT device platform.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    `str`</span>
+<span class="sd">        An empty string is returned if the platform is unknown.</span>
+<span class="sd">        Otherwise, return the device platform info, e.g.,</span>
+<span class="sd">        `Raspberry Pi 3 Model B Plus Rev 1.3`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;/sys/firmware/devicetree/base/model&quot;</span><span class="p">],</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="iothealth.raspberry_pi.RaspberryPi.temperature" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">temperature</span><span class="p">()</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the device's temperature.</p>
+<h6 id="iothealth.raspberry_pi.RaspberryPi.temperature--returns">Returns</h6>
+<p>float
+    The device temperature, e.g., 54.8.
+    The temperature unit is Celsius.</p>
+<h6 id="iothealth.raspberry_pi.RaspberryPi.temperature--raises">Raises</h6>
+<p><code>RuntimeError</code>
+    Raised if the temperature info is not available.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>iothealth/raspberry_pi.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">temperature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the device&#39;s temperature.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        The device temperature, e.g., 54.8.</span>
+<span class="sd">        The temperature unit is Celsius.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    `RuntimeError`</span>
+<span class="sd">        Raised if the temperature info is not available.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">VCGENGCMD</span> <span class="o">=</span> <span class="s2">&quot;vcgencmd&quot;</span>
+    <span class="n">vcgencmd_path</span> <span class="o">=</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="n">VCGENGCMD</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">vcgencmd_path</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No </span><span class="si">{</span><span class="n">VCGENGCMD</span><span class="si">}</span><span class="s2"> command found.&quot;</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">vcgencmd_path</span><span class="p">,</span> <span class="s2">&quot;measure_temp&quot;</span><span class="p">],</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;chip&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)}</span>
+
+    <span class="k">return</span> <span class="p">{}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
